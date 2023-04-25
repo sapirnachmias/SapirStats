@@ -6,7 +6,7 @@ import streamlit as st
 
 
 def parse_numbers_input(n_input: str) -> np.ndarray:
-    is_valid = re.match(r'^\d+(,\d+)*$', n_input)
+    is_valid = re.match(r'^-?\d+(,-?\d+)*$', n_input)
 
     if is_valid:
         return np.array([float(n.strip()) for n in n_input.split(',')])
